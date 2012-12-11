@@ -16,7 +16,6 @@ supports         "amazon"
 supports         "fedora"
 
 depends "apache2"
-depends "php"
 depends "build-essential"
 depends "git"
 depends "runit"
@@ -25,3 +24,5 @@ depends "java"
 depends "ant"
 depends "logrotate"
 depends "rabbitmq"
+
+suggests "php"
