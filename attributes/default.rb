@@ -13,3 +13,6 @@ default['logstash']['elasticsearch_ip'] = ''
 default['logstash']['graphite_ip'] = ''
 
 default['logstash']['patterns'] = {}
+default['logstash']['version'] = '1.1.5'
+default['logstash']['source_url'] = 'https://logstash.objects.dreamhost.com/release/logstash-1.1.5-monolithic.jar'
+default['logstash']['checksum'] = '001fe6a35bfd600d994ca39d0b4a7e76825c63bfe04b7631b7fe33012319fd3a'

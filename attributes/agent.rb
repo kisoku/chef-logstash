@@ -1,6 +1,6 @@
-default['logstash']['agent']['version'] = '1.1.1'
-default['logstash']['agent']['source_url'] = 'http://databits.net/petef/tmp/logstash-1.1.1-pre-monolithic-jruby1.7.0pre1.jar'
-default['logstash']['agent']['checksum'] = '6ca41718706c118ee6abb339bec9225b5d56cc3dc258d5053e64d00e24cdb918'
+default['logstash']['agent']['version'] = node[:logstash][:version]
+default['logstash']['agent']['source_url'] = node[:logstash][:source_url]
+default['logstash']['agent']['checksum'] = node[:logstash][:checksum]
 default['logstash']['agent']['install_method'] = 'jar' # Either `source` or `jar`
 default['logstash']['agent']['patterns_dir'] = 'agent/etc/patterns'
 default['logstash']['agent']['base_config'] = 'agent.conf.erb'
