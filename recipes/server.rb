@@ -59,13 +59,13 @@ end
 
 # installation
 if node['logstash']['server']['install_method'] == "jar"
-  remote_file "#{node['logstash']['basedir']}/server/lib/logstash-#{node['logstash']['server']['version']}.jar" do
+  remote_file "#{node['logstash']['basedir']}/server/lib/logstash-#{node['logstash']['version']}.jar" do
     owner "root"
     group "root"
     mode "0755"
-    source node['logstash']['server']['source_url']
-    checksum node['logstash']['server']['checksum']
-    not_if { File.exists?("#{node['logstash']['basedir']}/server/lib/logstash-#{node['logstash']['server']['version']}.jar") }
+    source node['logstash']['source_url']
+    checksum node['logstash']['checksum']
+    not_if { File.exists?("#{node['logstash']['basedir']}/server/lib/logstash-#{node['logstash']['version']}.jar") }
   end
 
   link "#{node['logstash']['basedir']}/server/lib/logstash.jar" do

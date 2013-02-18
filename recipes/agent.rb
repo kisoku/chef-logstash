@@ -102,16 +102,16 @@ elsif platform? "redhat", "centos", "amazon", "fedora", "scientific"
 end
 
 if node['logstash']['agent']['install_method'] == "jar"
-  remote_file "#{node['logstash']['basedir']}/agent/lib/logstash-#{node['logstash']['agent']['version']}.jar" do
+  remote_file "#{node['logstash']['basedir']}/agent/lib/logstash-#{node['logstash']['version']}.jar" do
     owner "root"
     group "root"
     mode "0755"
-    source node['logstash']['agent']['source_url']
-    checksum  node['logstash']['agent']['checksum']
+    source node['logstash']['source_url']
+    checksum  node['logstash']['checksum']
   end
 
   link "#{node['logstash']['basedir']}/agent/lib/logstash.jar" do
-    to "#{node['logstash']['basedir']}/agent/lib/logstash-#{node['logstash']['agent']['version']}.jar"
+    to "#{node['logstash']['basedir']}/agent/lib/logstash-#{node['logstash']['version']}.jar"
     notifies :restart, "service[logstash_agent]"
   end
 else
